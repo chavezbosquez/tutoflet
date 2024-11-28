@@ -1,21 +1,32 @@
 import flet as ft
 #import componentes as cm
 
-class PanelConfig(ft.Pagelet):
+def leer_archivo(archivo):
+    """"""
+    return open(archivo, 'r').read()
 
+def crear_texto_markdown_formateado(archivo, pagelet):
+        return ft.Markdown(
+            leer_archivo(archivo),
+            selectable=True,
+            md_style_sheet=ft.MarkdownStyleSheet(p_text_style=ft.TextStyle(size=16)),
+            extension_set='gitHubWeb',
+            code_theme='atom-one-dark',
+            code_style=ft.TextStyle(font_family='RobotoMono', size=16),
+            #code_style_sheet=ft.TextStyle(font_family="RobotoMono", size=16),
+            on_tap_link=lambda e: pagelet.page.launch_url(e.data)
+        )
+
+class PanelConfig(ft.Pagelet):
     def __init__(self):
         super().__init__(self)
         self.padding = 20
-
         self.appbar = ft.AppBar(
             leading=ft.Icon(ft.icons.SETTINGS),
             title=ft.Text('Configuración', size=26),
             bgcolor=ft.colors.GREEN_200
         )
-        self.content=ft.Text('PanelConfig dentro del main')
-        
-        '''
-        mkd_texto = cm.crear_texto_markdown_formateado('assets/config.md', self)
+        mkd_texto = crear_texto_markdown_formateado('assets/config.md', self)
 
         self.content=ft.Row(
             controls=[
@@ -25,7 +36,6 @@ class PanelConfig(ft.Pagelet):
                     expand=True)
             ]
         )
-        '''
 
 if __name__ == '__main__':
 
