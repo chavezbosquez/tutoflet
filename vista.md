@@ -23,10 +23,10 @@ def main(page: ft.Page):
     txt_apellidos = ft.TextField(label='Apellidos', width=400)
     # Grado académico
     rdo_grado = ft.RadioGroup(content=ft.Row([
-        ft.Radio(value='Lic.', label='Licenciatura'),
-        ft.Radio(value='M.', label='Maestría'),
-        ft.Radio(value='Dr.', label='Doctorado')
-    ]), value='Dr.')
+        ft.Radio(value='Licenciatura', label='Licenciatura'),
+        ft.Radio(value='Maestría', label='Maestría'),
+        ft.Radio(value='Doctorado', label='Doctorado')
+    ]), value='Doctorado')
 
     # División Académica
     drp_division = ft.Dropdown(
