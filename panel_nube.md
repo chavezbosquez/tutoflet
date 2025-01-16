@@ -311,21 +311,21 @@ Ahora crea un nuevo evento para guardar los datos. Esto se realiza declarando un
 el botón **Guardar**:
 
 ~~~python
-def guardar_profesor(e: ft.ControlEvent):
+    def guardar_profesor(e: ft.ControlEvent):
         print('Guardar registro')
 ~~~
 
 Recuerda agregar el nombre de la función al evento `on_click()` del botón.
 
 ~~~python
-btn_aceptar  = ft.ElevatedButton(
-    text='Guardar',
-    icon='save',
-    bgcolor='green',
-    color='white',
-    width=150,
-    on_click=guardar_profesor
-)
+    btn_aceptar  = ft.ElevatedButton(
+        text='Guardar',
+        icon='save',
+        bgcolor='green',
+        color='white',
+        width=150,
+        on_click=guardar_profesor
+    )
 ~~~
 
 Ejecuta el archivo y revisa que al hacer clic al botón te aparezca en la terminal el texto _'Guardar registro'_.
@@ -334,25 +334,72 @@ Puedes continuar si todo ha salido bien.
 **Importante:** Recuerda eliminar el código de prueba dentro de `modelo_airtable.py` donde guardábamos un registro de
 ejemplo. ¡De lo contrario tendrás múltiples registros repetidos!
 
-~~~python
-
-~~~
-
-
+Ahora vamos a reciclar el código de `modelo_airtable.py` para guardar los datos recopilados desde nuestra UI. El ćodigo
+de la función nos queda así:
 
 ~~~python
-
+    def guardar_profesor(e: ft.ControlEvent):
+        # Crear una instancia de la clase Profesor
+        profe = Profesor(
+            num_empleado=txt_clave.value,
+            grado = rdo_grado.value,
+            nombre = txt_nombre.value,
+            apellidos = txt_apellidos.value,
+            es_prodep = chk_prodep.value,
+            division = drp_division.value
+        )
+        # Guardar en la nube
+        profe.save()
 ~~~
+
+¿Que tal? ¿Funciona? Ejecuta el archivo y rellena con algunos datos realistas:
+
+![UI](img/airtable26.png)
+
+¡Listo! Ya aparecen los datos en Airtable:
+
+![Airtable ORM](img/airtable27.png)
+
+Ahora vamos a detallar un poco nuestra aplicación. En primer lugar vamos a incluir la funcionalidad del botón 
+**x Cancelar**. Para ello define la siguiente función:
 
 
 ~~~python
-
+    def cerrar_ventana(e: ft.ControlEvent):
+        page.window.close()
 ~~~
+
+Y por supuesto debes invocarla desde el botón `btn_cancelar`:
 
 ~~~python
-
+    btn_cancelar = ft.ElevatedButton(
+        text='Cancelar',
+        icon='close',
+        bgcolor='red',
+        color='white',
+        width=150,
+        on_click=cerrar_ventana
+    )
 ~~~
+
+Ejecuta el archivo y le botón ahora tiene la funcionalidad de cerrar la ventana y terminar la aplicación.
+
+En segundo lugar vamos a desplegar un mensaje al momento de guardar un registro. Agrega este código justo debajo
+después de `profe.save()`:
 
 ~~~python
-
+        # Mostrar un mensaje de éxito
+        snack_bar = ft.SnackBar(
+            content=ft.Text('Registro guardado en la nube'),
+            bgcolor='brown',
+            show_close_icon=True
+        )
+        page.overlay.append(snack_bar)
+        snack_bar.open = True
+        page.update()
 ~~~
+
+¿Que tal se ve? ¿Elegante verdad?
+
+Pues ya con esto concluimos el tutorial. ¡Esperamos te haya gustado! Solamente te queda de tarea la validación de datos antes
+de guardar. Ah y limpiar los campos después de guardar.
