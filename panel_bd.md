@@ -98,8 +98,7 @@ Después de unos segundos y unos cuantos MB de descarga ya estamos listos para c
 
 Vamos a crear un nuevo archivo para crear nuestra conexión a la base de datos. Nombrémosle al archivo 
 _modelo_sqlite.py_ y dentro vamos a definir nuestro archivo de base de datos. Este nombre viene del patrón de diseño
-MVC (Modelo-Vista-Controlador), el cual es un patrón de arquitectura de software que separa la lógica de la aplicación
-de la interfaz de usuario y del mecanismo de persistencia (generalmente una base de datos) en una aplicación.
+MVC (Modelo-Vista-Controlador).
 
 La conexión a SQLite desde Python es directa porque el módulo `sqlite3` se incluye en la instalación predeterminada
 de Python. En este caso que el archivo de la base de datos se encuentra en el mismo directorio que nuestro código por

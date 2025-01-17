@@ -11,8 +11,7 @@ class PanelUI(ft.Pagelet):
         mkd_texto = cm.crear_texto_markdown_formateado('panel_ui.md', self)
 
         codigo, mkd_codigo = cm.crear_codigo_markdown('vista.md', 'python')
-
-        txt_copiar, btn_copiar = cm.crear_boton_copiar('Código fuente para crear la UI:', codigo, self)
+        txt_copiar, btn_copiar = cm.crear_boton_copiar('Código fuente de la vista:', codigo, self)
 
         self.content = ft.Column(
             controls=[

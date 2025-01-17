@@ -2,11 +2,13 @@ import flet as ft
 
 def main(page: ft.Page):
     # Configuración de la página
-    page.window.width =400
-    page.window.height =480
+    page.window.width  = 400
+    page.window.height = 480
     page.padding = 25
     page.title = 'Alta de profesores'
     page.theme_mode = 'light'
+    
+    # Barra de título
     page.appbar = ft.AppBar(
         leading=ft.Icon('person'),
         title=ft.Text('Nuevo profesor'),
