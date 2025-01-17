@@ -399,7 +399,7 @@ después de `profe.save()`:
         page.update()
 ~~~
 
-¿Que tal se ve? ¿Elegante verdad?
+¿Qué tal se ve? ¿Elegante verdad?
 
 Pues ya con esto concluimos el tutorial. ¡Esperamos te haya gustado! Solamente te queda de tarea la validación de datos antes
-de guardar. Ah y limpiar los campos después de guardar.
+de guardar. ¡Y limpiar los campos después de guardar!

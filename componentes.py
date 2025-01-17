@@ -7,13 +7,11 @@ def crear_appbar(icono, texto):
         bgcolor=ft.colors.GREEN_200
     )
 
-
 def leer_archivo(archivo):
     try:
         return open(archivo, 'r').read()
     except:
         return '[Error al cargar el archivo]'
-
 
 def crear_texto_markdown_formateado(archivo, pagelet):
     return ft.Markdown(
@@ -26,7 +24,6 @@ def crear_texto_markdown_formateado(archivo, pagelet):
         #code_style_sheet=ft.TextStyle(font_family="RobotoMono", size=16),
         on_tap_link=lambda e: pagelet.page.launch_url(e.data)
     )
-
 
 def crear_codigo_markdown(archivo, lenguaje):
     codigo  = leer_archivo(archivo)
@@ -50,3 +47,11 @@ def crear_boton_copiar(texto, codigo, pagelet):
         on_click=lambda e: pagelet.page.set_clipboard(codigo)
     )
     return txt_copiar, btn_copiar
+
+def crear_contenedor_codigo(mkd_codigo):
+    return ft.Container(
+        mkd_codigo,
+        margin=ft.margin.only(right=50),
+        padding=ft.padding.only(right=50),
+        clip_behavior='antiAlias'
+    )

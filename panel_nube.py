@@ -10,10 +10,22 @@ class PanelNube(ft.Pagelet):
 
         mkd_texto = cm.crear_texto_markdown_formateado('panel_nube.md', self)
 
+        codigo_vista, mkd_codigo_vista = cm.crear_codigo_markdown('vista_bd_airtable.md', 'python')
+        txt_copiar_vista, btn_copiar_vista = cm.crear_boton_copiar('Código fuente de la vista:', codigo_vista, self)
+
+        codigo_modelo, mkd_codigo_modelo = cm.crear_codigo_markdown('modelo_airtable.md', 'python')
+        txt_copiar_modelo, btn_copiar_modelo = cm.crear_boton_copiar('Código fuente del modelo:', codigo_vista, self)
+
         self.content = ft.Row(
             controls=[
                 ft.Column(
-                    controls=[mkd_texto],
+                    controls=[
+                        mkd_texto,
+                        ft.Row([txt_copiar_modelo, btn_copiar_modelo]),
+                        cm.crear_contenedor_codigo(mkd_codigo_modelo),
+                        ft.Row([txt_copiar_vista, btn_copiar_vista]),
+                        cm.crear_contenedor_codigo(mkd_codigo_vista),
+                    ],
                     scroll=ft.ScrollMode.ALWAYS,
                     expand=True)
             ]
