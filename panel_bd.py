@@ -14,7 +14,7 @@ class PanelBD(ft.Pagelet):
         txt_copiar_vista, btn_copiar_vista = cm.crear_boton_copiar('Código fuente de la vista:', codigo_vista, self)
 
         codigo_modelo, mkd_codigo_modelo = cm.crear_codigo_markdown('modelo_sqlite.md', 'python')
-        txt_copiar_modelo, btn_copiar_modelo = cm.crear_boton_copiar('Código fuente del modelo:', codigo_vista, self)
+        txt_copiar_modelo, btn_copiar_modelo = cm.crear_boton_copiar('Código fuente del modelo:', codigo_modelo, self)
 
         self.content = ft.Column(
             controls=[

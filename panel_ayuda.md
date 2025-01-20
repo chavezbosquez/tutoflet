@@ -27,6 +27,8 @@ A grandes rasgos aprenderás a:
 El resultado final será una aplicación funcional con una interfaz moderna, almacenamiento local en SQLite y
 sincronización en la nube mediante Airtable. ¡Todo ello usando exclusivamente software libre!
 
+> Descarga el código fuente del proyecto: <https://github.com/chavezbosquez/tutoflet/blob/main/proyecto-final-flet/proyecto-final-flet.zip>
+
 &nbsp;
 # Preguntas Frecuentes (FAQ)
 &nbsp;
@@ -38,13 +40,13 @@ Desde la terminal o línea de comandos, ejecuta:
 python --version
 ~~~
 
-Deberías ver la versión de Python instalada. Si no aparece, instala Python desde [python.org](www.python.org).
+Deberías ver la versión de Python instalada. Si no aparece, instala Python desde [python.org](https://www.python.org).
 
 \
 &nbsp;
 **2. ¿Qué hacer si no puedo instalar VS Codium?**
 
-Asegúrate de descargar la versión correcta para tu sistema operativo desde [vscodium.com](www.vscodium.com).
+Asegúrate de descargar la versión correcta para tu sistema operativo desde [vscodium.com](https://vscodium.com).
 Si tienes problemas intenta ejecutar el instalador como administrador o revisa las configuraciones de seguridad
 de tu sistema.
 
@@ -131,6 +133,7 @@ page.overlay.append(snack_bar)
    - **Python**: <https://www.python.org>
    - **VS Codium**: <https://vscodium.com>
    - **Flet**: <https://flet.dev>
+   - **Pencil Project**: <https://pencil.evolus.vn>
    - **SQLite**: <https://www.sqlite.org>
    - **Peewee ORM**: <https://docs.peewee-orm.com/en/latest/> 
    - **Airtable**: <https://www.airtable.com>

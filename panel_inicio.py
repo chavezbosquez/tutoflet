@@ -28,7 +28,7 @@ class PanelInicio(ft.Pagelet):
         self.content=ft.Row(
             controls=[
                 ft.Column(
-                    controls=[img_ujat, txt_sistema, txt_version, txt_info],
+                    controls=[img_ujat, ft.Divider(), txt_sistema, txt_version, txt_info],
                     alignment=ft.MainAxisAlignment.CENTER,
                     horizontal_alignment=ft.CrossAxisAlignment.CENTER
                 )
