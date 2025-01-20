@@ -4,6 +4,7 @@ from panel_config import PanelConfig
 from panel_ui import PanelUI
 from panel_bd import PanelBD
 from panel_nube import PanelNube
+from panel_ayuda import PanelAyuda
 
 def main(page: ft.Page):
 
@@ -31,7 +32,7 @@ def main(page: ft.Page):
         PanelUI(),
         PanelBD(),
         PanelNube(),
-        ft.Text('¿Ayuda?'),
+        PanelAyuda(),
     ]
 
     nav_rail = ft.NavigationRail(
