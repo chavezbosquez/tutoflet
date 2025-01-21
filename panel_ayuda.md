@@ -27,7 +27,7 @@ A grandes rasgos aprenderás a:
 El resultado final será una aplicación funcional con una interfaz moderna, almacenamiento local en SQLite y
 sincronización en la nube mediante Airtable. ¡Todo ello usando exclusivamente software libre!
 
-> Descarga el código fuente del proyecto: <https://github.com/chavezbosquez/tutoflet/blob/main/proyecto-final-flet/proyecto-final-flet.zip>
+> Descarga el código fuente del proyecto: <https://github.com/chavezbosquez/tutoflet/raw/refs/heads/main/proyecto-final-flet/proyecto-final-flet.zip>
 
 &nbsp;
 # Preguntas Frecuentes (FAQ)

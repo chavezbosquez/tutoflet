@@ -1,6 +1,6 @@
 # TutoFlet
 
-Tutorial avanzado de Flet (base de datos)
+Tutorial avanzado de Flet (base de datos).
 
 Desarrollado con ❤️ por:
 
